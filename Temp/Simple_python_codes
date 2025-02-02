@@ -1,0 +1,68 @@
+#1. Write a python program to swap below string  . Input = Ravi Kumar Patel, output = Kumar Ravi patel  
+name = input("Enter the name: ") 
+parts = name.split() 
+length = len(parts) 
+for i in range(0, length - 1, 2): 
+temp = parts[i] 
+parts[i] = parts[i + 1] 
+parts[i + 1] = temp 
+output_name = " ".join(parts) 
+print("Output:", output_name) 
+
+#2. Write a python program to find maximum number from the list without using sorting  list = [87,43 ,76,1,99,23,8] 
+numbers = list(map(int, input("Enter numbers separated by comma: ").split(","))) 
+maximum = numbers[0] 
+for num in numbers: 
+if num > maximum: 
+maximum = num 
+print("Maximum number in the list:", maximum) 
+
+#3. Write python to find the occurance of character in string s1= google output = g=2,o=2... 
+s1 = input("Enter a string: ") 
+character_count = {} 
+for char in s1: 
+if char in character_count: 
+character_count[char] += 1 
+else: 
+character_count[char] = 1 
+print("Character occurrences:") 
+for char, count in character_count.items(): 
+print(f"{char} = {count}") 
+
+#4. Use list comprehension to solve below problem . Find all number from 1 to 1000 are divided by 7   
+divisible_by_7 = [num for num in range(1, 1001) if num % 7 == 0] 
+print("Numbers divisible by 7 from 1 to 1000:", divisible_by_7) 
+
+#5. Produce a list containing word even if number is even and odd if number is odd . Input = [75,8,94,2,23,29,100], output = [odd, even ,even ,...] 
+input_numbers = list(map(int, input("Enter numbers separated by spaces: ").split(","))) 
+even_odd_list = ["even" if num % 2 == 0 else "odd" for num in input_numbers] 
+print("Even/Odd list:", even_odd_list) 
+
+#6. Write a program to extract numbers from the string .input = 'hello 1 hi 9 .How are 10' output =[1,9,10] 
+input_string = input("Enter a string: ") 
+numbers_in_string = [int(word) for word in input_string.split() if word.isdigit()] 
+print("Numbers extracted from string:", numbers_in_string) 
+
+#7. Write a program to find give string of email is in correct format or not.Input=xyz@gmail.com output = correct  
+import re 
+email = input("Enter an email address: ") 
+if re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email): 
+print("Correct format") 
+else: 
+print("Incorrect format") 
+
+#8. Write program to remove all white space in from the string  
+string_with_spaces = input("Enter a string with spaces: ") 
+string_without_spaces = string_with_spaces.replace(" ", "") 
+print("String without spaces:", string_without_spaces) 
+
+#9. Write a program to find sum of 1to50 numbers using list comprehension  
+sum_1_to_50 = sum([num for num in range(1, 51)]) 
+print("Sum of numbers from 1 to 50:", sum_1_to_50) 
+
+#10. Write a program to check string is alpha numeric or not  
+input_string = input("Enter a string: ") 
+if input_string.isalnum(): 
+print("The string is alphanumeric") 
+else: 
+print("The string is not alphanumeric") 
